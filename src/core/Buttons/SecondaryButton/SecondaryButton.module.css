@@ -5,6 +5,10 @@
     border: none;
     border-radius: 0.2rem;
     cursor: pointer;
+    font-family: inherit;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .btn:hover {

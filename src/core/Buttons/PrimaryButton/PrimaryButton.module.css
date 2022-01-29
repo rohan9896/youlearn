@@ -3,6 +3,10 @@
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
+    font-family: inherit;
+    height: 2rem;
+    display: flex;
+    align-items: center;
   }
   
 .btn:hover {

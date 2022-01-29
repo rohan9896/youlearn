@@ -1,0 +1,12 @@
+.btn {
+    padding: .5rem 1rem;
+    border-radius: 0.4rem;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: white;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}

@@ -1,11 +1,10 @@
 import './App.css';
-import {PrimaryButton, SecondaryButton} from "./core"
+import { Navbar } from './components';
 
 function App() {
   return (
     <div className="App">
-      <PrimaryButton title="Login" onPress={() => {}} textColor={"white"} bgColor={"blue"} />
-      <SecondaryButton title="Signup" onPress={() => {}} textColor={"white"} bgColor={"red"} />
+      <Navbar />
     </div>
   );
 }

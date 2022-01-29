@@ -1,0 +1,27 @@
+.nav {
+    background-color: #0f172a;
+}
+
+.nav__logo {
+    width: 10rem;
+    height: 4rem;
+    padding: 0.3rem;
+}
+
+.nav__mobile_menuBtn {
+    margin: 1rem;
+}
+
+.nav__desktop_menuList {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+    .nav__mobile_menuBtn {
+        display: none;
+    }
+    .nav__desktop_menuList {
+        display: flex;
+        margin: 0.7rem;
+    }
+}
