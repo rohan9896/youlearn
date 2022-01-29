@@ -1,0 +1,13 @@
+.btn {
+    padding: 0.8rem 2rem;
+    font-size: medium;
+    box-shadow: 0 2px 4px 1px rgb(0 0 0 / 20%);
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.01);
+}
+

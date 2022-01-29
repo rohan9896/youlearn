@@ -1,0 +1,10 @@
+.btn {
+    padding: 0.625rem 1.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+.btn:hover {
+    transform: scale(1.01);
+}
