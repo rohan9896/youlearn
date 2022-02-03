@@ -1,8 +1,38 @@
-.inputContainer {
-    width: 20rem;
-    max-width: 100%;
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
 }
 
-.inputContainer > * {
-    margin: 1rem;
+.login__image {
+  background-repeat: no-repeat;
+  padding: 5rem;
+}
+
+.login__image > img {
+  width: inherit;
+  height: 30rem;
+  max-width: 100%;
+}
+
+.login__inputContainer {
+  width: 20rem;
+  max-width: 100%;
+}
+
+.login__registerHereContainer {
+    margin: 2rem;
+}
+
+.login__inputContainer > *, .login__registerHereContainer > * {
+  margin: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .login__image {
+    display: none;
+  }
+  .login {
+    grid-template-columns: 1fr;
+  }
 }

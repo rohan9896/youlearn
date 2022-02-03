@@ -6,7 +6,7 @@ export function EmailInput({ placeholderText }) {
   const [isEmailValid, setIsEmailValid] = useState(true);
 
   const checkEmailValidation = (email) => {
-    let re = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+    let re = /^\S+@\S+$/;
     setIsEmailValid(re.test(email));
   }
 
