@@ -1,0 +1,15 @@
+.btn {
+  padding: 0.625rem 1.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn:hover {
+  transform: scale(1.01);
+  filter: brightness(80%);
+}

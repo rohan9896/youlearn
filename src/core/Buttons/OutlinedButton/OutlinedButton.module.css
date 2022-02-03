@@ -10,3 +10,7 @@
     display: flex;
     align-items: center;
 }
+
+.btn:hover {
+    filter: brightness(80%);
+}

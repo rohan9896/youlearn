@@ -3,9 +3,12 @@ import logo from "../../assets/images/logo.png";
 import { OutlinedButton, PrimaryButton, TextButton } from "../../core";
 import styles from "./Navbar.module.css";
 import utilityStyles from "../../core/utility.module.css";
+import { useNavigate } from "react-router-dom";
 
 export function Navbar() {
   const [menuClicked, setMenuClicked] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <nav
@@ -24,7 +27,7 @@ export function Navbar() {
         />
       </div>
       <div className={`${styles.nav__desktop_menuList} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}>
-          <TextButton title="Login" onPress={() => {}} textColor={"white"} />
+          <TextButton title="Login" onPress={() => navigate(`/login`)} textColor={"white"} />
           <PrimaryButton title="Sign Up" onPress={() => {}} textColor={"black"} bgColor={"#e5e5e5"} />
       </div>
     </nav>
