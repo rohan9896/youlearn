@@ -6,11 +6,12 @@ import {
   OutlinedButton,
   PasswordInput,
   SubmitInput,
+  TextInput,
 } from "../../core";
-import LoginHero from "../../assets/images/login_hero.svg";
+import SignupHero from "../../assets/images/login_hero.svg";
 import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -20,27 +21,28 @@ export function Login() {
   return (
     <div className={`${styles.login}`}>
       <div className={styles.login__image}>
-        <img src={LoginHero} alt="Login hero" />
+        <img src={SignupHero} alt="Signup hero" />
       </div>
       <form
         onSubmit={handleSubmit}
         className={`${utilityStyles.flex} ${utilityStyles.flexDirectionColumn} ${utilityStyles.alignItemsCenter} ${utilityStyles.justifyContentCenter}`}
       >
-        <h2>LOGIN</h2>
+        <h2>SIGN UP</h2>
         <div className={styles.login__inputContainer}>
+          <TextInput placeholderText={"Username"} />
           <EmailInput placeholderText={"Email"} />
           <PasswordInput placeholderText={"Password"} />
         </div>
         <SubmitInput
-          title={"Login"}
+          title={"Sign Up"}
           textColor={"#f8fafc"}
           bgColor={"#0284c7"}
         />
         <div
           className={`${styles.login__registerHereContainer} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}
         >
-          <p>New here?</p>
-          <OutlinedButton onPress={() => navigate(`/signup`)} textColor={"#0284c7"} title={"Register Here"} />
+          <p>Already a user?</p>
+          <OutlinedButton onPress={() => navigate(`/login`)} textColor={"#0284c7"} title={"Login"} />
         </div>
       </form>
     </div>

@@ -28,7 +28,7 @@ export function Navbar() {
       </div>
       <div className={`${styles.nav__desktop_menuList} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}>
           <TextButton title="Login" onPress={() => navigate(`/login`)} textColor={"white"} />
-          <PrimaryButton title="Sign Up" onPress={() => {}} textColor={"black"} bgColor={"#e5e5e5"} />
+          <PrimaryButton title="Sign Up" onPress={() => navigate(`/signup`)} textColor={"black"} bgColor={"#e5e5e5"} />
       </div>
     </nav>
   );
