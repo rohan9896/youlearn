@@ -1,11 +1,12 @@
 .nav {
-    background-color: #0f172a;
+    background-color: #171717;
 }
 
 .nav__logo {
     width: 10rem;
     height: 4rem;
     padding: 0.3rem;
+    cursor: pointer;
 }
 
 .nav__mobile_menuBtn {

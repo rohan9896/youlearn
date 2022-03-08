@@ -14,7 +14,7 @@ export function Navbar() {
     <nav
       className={`${styles.nav} ${utilityStyles.flex} ${utilityStyles.justifyContentSpaceBetween}`}
     >
-      <img className={styles.nav__logo} src={logo} alt="logo" />
+      <img onClick={() => navigate(`/`)} className={styles.nav__logo} src={logo} alt="logo" />
       <div
         className={`${styles.nav__mobile_menuBtn} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}
       >

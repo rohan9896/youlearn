@@ -1,0 +1,7 @@
+.GenreScroller {
+    padding: 0.5rem;
+    display: flex;
+    overflow: scroll;
+    background-color: #171717;
+    border: solid 0.5px rgb(145, 145, 145);
+}
