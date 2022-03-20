@@ -13,3 +13,7 @@
   transform: scale(1.01);
   filter: brightness(80%);
 }
+
+.btn:disabled {
+  cursor:not-allowed;
+}

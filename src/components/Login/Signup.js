@@ -11,7 +11,7 @@ import {
 import SignupHero from "../../assets/images/login_hero.svg";
 import { useNavigate } from "react-router-dom";
 
-export function Signup() {
+export const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };

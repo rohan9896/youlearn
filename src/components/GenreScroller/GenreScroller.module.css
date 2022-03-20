@@ -2,6 +2,6 @@
     padding: 0.5rem;
     display: flex;
     overflow: scroll;
-    background-color: #171717;
+    background-color: var(--dark-black);
     border: solid 0.5px rgb(145, 145, 145);
 }

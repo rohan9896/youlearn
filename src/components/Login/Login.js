@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef} from "react";
 import styles from "./Login.module.css";
 import utilityStyles from "../../core/utility.module.css";
 import {
@@ -10,16 +10,15 @@ import {
 import LoginHero from "../../assets/images/login_hero.svg";
 import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export const Login = () => {
 
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const email = useRef();
+  const password = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log(email.current.value);
+    console.log(password.current.value);
   };
 
   const navigate = useNavigate();
@@ -35,16 +34,13 @@ export function Login() {
       >
         <h2>LOGIN</h2>
         <div className={styles.login__inputContainer}>
-          <EmailInput onChange={(e) => console.log(e.target.value)} placeholderText={"Email"} />
-          <PasswordInput onChange={(e) => setFormData({
-            ...formData,
-            password: e.target.value
-          })} placeholderText={"Password"} />
+          <EmailInput ref={email} placeholderText={"Email"} />
+          <PasswordInput ref={password} placeholderText={"Password"} />
         </div>
         <SubmitInput
           title={"Login"}
-          textColor={"#f8fafc"}
-          bgColor={"#0284c7"}
+          textColor={"var(--primary-white)"}
+          bgColor={"var(--sky-blue)"}
         />
         <div
           className={`${styles.login__registerHereContainer} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}

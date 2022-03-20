@@ -5,6 +5,7 @@ import styles from "./GenreScroller.module.css";
 
 export const GenreScroller = () => {
   const [genres, setGenres] = useState([]);
+  // const [selectedGenreIndex, setSelectedGenreIndex] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -16,8 +17,10 @@ export const GenreScroller = () => {
 
   return (
     <div className={styles.GenreScroller}>
-      {genres.map((item, index) => {
-        return <GenrePill key={index} genre={item} isSelected={true} />;
+      {genres?.map((item, index) => {
+        return <GenrePill onClick={() => {
+
+        }} key={index} genre={item} isSelected={true} />;
       })}
     </div>
   );

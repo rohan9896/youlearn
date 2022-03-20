@@ -1,5 +1,5 @@
 .nav {
-    background-color: #171717;
+    background-color: var(--dark-black);
 }
 
 .nav__logo {
@@ -23,6 +23,6 @@
     }
     .nav__desktop_menuList {
         display: flex;
-        margin: 0.7rem;
+        margin: 0.8rem;
     }
 }
