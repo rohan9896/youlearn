@@ -12,7 +12,7 @@ export function Navbar() {
 
   return (
     <nav
-      className={`${styles.nav} ${utilityStyles.flex} ${utilityStyles.justifyContentSpaceBetween}`}
+      className={`${styles.nav} ${utilityStyles.flex} ${utilityStyles.justifyContentSpaceBetween} ${utilityStyles.alignItemsCenter}`}
     >
       <img onClick={() => navigate(`/`)} className={styles.nav__logo} src={logo} alt="logo" />
       <div
