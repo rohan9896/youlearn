@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getGenres } from "../../services/api.services";
+import { getGenres } from "../../services/commonAPI.services";
 import { GenrePill } from "./GernePill/GenrePill";
 import styles from "./GenreScroller.module.css";
+import { PrimarySpinner } from "../../core";
+import utilityStyles from "../../core/utility.module.css";
 
 export const GenreScroller = () => {
   const [genres, setGenres] = useState([]);
@@ -14,13 +16,17 @@ export const GenreScroller = () => {
       setGenres(genresData);
     })();
   }, []);
-
   return (
     <div className={styles.GenreScroller}>
       {genres?.map((item, index) => {
-        return <GenrePill onClick={() => {
-
-        }} key={index} genre={item} isSelected={true} />;
+        return (
+          <GenrePill
+            onClick={() => {}}
+            key={index}
+            genre={item}
+            isSelected={true}
+          />
+        );
       })}
     </div>
   );

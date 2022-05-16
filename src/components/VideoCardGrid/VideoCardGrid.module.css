@@ -1,0 +1,18 @@
+.VideoCardGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .VideoCardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .VideoCardGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef, useState } from "react";
 import styles from "./Login.module.css";
 import utilityStyles from "../../core/utility.module.css";
 import {
@@ -9,16 +9,23 @@ import {
 } from "../../core";
 import LoginHero from "../../assets/images/login_hero.svg";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/authContext/AuthContext";
+import { loginCall } from "../../context/authContext/apiCalls";
 
 export const Login = () => {
-
   const email = useRef();
   const password = useRef();
 
-  const handleSubmit = (e) => {
+  const { isFetching, error, dispatch } = useAuth();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email.current.value);
-    console.log(password.current.value);
+    await loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
+    email.current.value = "";
+    password.current.value = "";
   };
 
   const navigate = useNavigate();
@@ -41,14 +48,21 @@ export const Login = () => {
           title={"Login"}
           textColor={"var(--primary-white)"}
           bgColor={"var(--sky-blue)"}
+          disabled={isFetching}
+          loading={isFetching}
         />
+        {error != "" && <p className={styles.errorMsg}>{error}</p>}
         <div
           className={`${styles.login__registerHereContainer} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}
         >
           <p>New here?</p>
-          <OutlinedButton onPress={() => navigate(`/signup`)} textColor={"#0284c7"} title={"Register Here"} />
+          <OutlinedButton
+            onPress={() => navigate(`/signup`)}
+            textColor={"#0284c7"}
+            title={"Register Here"}
+          />
         </div>
       </form>
     </div>
   );
-}
+};

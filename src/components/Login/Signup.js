@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Login.module.css";
 import utilityStyles from "../../core/utility.module.css";
 import {
@@ -10,10 +10,23 @@ import {
 } from "../../core";
 import SignupHero from "../../assets/images/login_hero.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { base_url } from "../../constants";
 
 export const Signup = () => {
+  const username = useRef();
+  const email = useRef();
+  const password = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    (async () => {
+      const response = await axios.post(`${base_url}/auth/register`, {
+        username: username.current.value,
+        email: email.current.value,
+        password: password.current.value,
+      });
+    })();
   };
 
   const navigate = useNavigate();
@@ -29,9 +42,9 @@ export const Signup = () => {
       >
         <h2>SIGN UP</h2>
         <div className={styles.login__inputContainer}>
-          <TextInput placeholderText={"Username"} />
-          <EmailInput placeholderText={"Email"} />
-          <PasswordInput placeholderText={"Password"} />
+          <TextInput ref={username} placeholderText={"Username"} />
+          <EmailInput ref={email} placeholderText={"Email"} />
+          <PasswordInput ref={password} placeholderText={"Password"} />
         </div>
         <SubmitInput
           title={"Sign Up"}
@@ -42,9 +55,13 @@ export const Signup = () => {
           className={`${styles.login__registerHereContainer} ${utilityStyles.flex} ${utilityStyles.alignItemsCenter}`}
         >
           <p>Already a user?</p>
-          <OutlinedButton onPress={() => navigate(`/login`)} textColor={"#0284c7"} title={"Login"} />
+          <OutlinedButton
+            onPress={() => navigate(`/login`)}
+            textColor={"#0284c7"}
+            title={"Login"}
+          />
         </div>
       </form>
     </div>
   );
-}
+};

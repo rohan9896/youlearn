@@ -28,6 +28,11 @@
   margin: 1rem;
 }
 
+.errorMsg {
+  color: red;
+  padding: 0.7rem;
+}
+
 @media screen and (max-width: 768px) {
   .login__image {
     display: none;

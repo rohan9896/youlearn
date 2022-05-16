@@ -1,19 +1,35 @@
-export const login = (user) => ({
-    type: "LOGIN",
-    payload: user
+export const loginStart = () => ({
+  type: "LOGIN_START",
 });
 
-export const resetAuth = (error) => ({
-    type: "RESET_AUTH",
-    payload: error
-})
+export const loginSuccess = (user) => ({
+  type: "LOGIN_SUCCESS",
+  payload: user,
+});
 
-export const logout = () => ({
-    type: "LOGOUT"
-})
+export const loginFailure = (error) => ({
+  type: "LOGIN_FAILURE",
+  payload: error,
+});
+
+export const signupStart = () => ({
+  type: "SIGNUP_START",
+});
+
+export const signupSuccess = () => ({
+  type: "SIGNUP_SUCCESS",
+});
+
+export const signupFailure = (error) => ({
+  type: "SIGNUP_FAILURE",
+  payload: error,
+});
 
 export const AuthActionTypes = {
-    LOGIN: "LOGIN",
-    RESET_AUTH: "RESET_AUTH",
-    LOGOUT: "LOGOUT",
+  LOGIN_START: "LOGIN_START",
+  LOGIN_SUCCESS: "LOGIN_SUCCESS",
+  LOGIN_FAILURE: "LOGIN_FAILURE",
+  SIGNUP_START: "SIGNUP_START",
+  SIGNUP_SUCCESS: "SIGNUP_SUCCESS",
+  SIGNUP_FAILURE: "SIGNUP_FAILURE",
 };

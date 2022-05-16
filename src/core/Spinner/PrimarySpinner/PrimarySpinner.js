@@ -11,6 +11,9 @@ export function PrimarySpinner({ varient }) {
   let size;
 
   switch (varient) {
+    case "extra-small":
+      size = "1rem";
+      break;
     case "small":
       size = "2rem";
       break;

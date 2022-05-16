@@ -1,1 +1,1 @@
-export {PrimarySpinner} from "./PrimarySpinner/PrimarySpinner"
+export { PrimarySpinner } from "./PrimarySpinner/PrimarySpinner";
